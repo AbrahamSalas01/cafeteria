@@ -1,0 +1,440 @@
+:root{
+    /* Fuentes */
+    --fuenteHeading: "PT Sans", sans-serif;
+    --fuenteParrafo: "Open Sans", sans-serif;
+
+    /* Paleta de colores */
+    --primario: #784D3C;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --hover:#dcdcdc;
+    --separador: #adadad;
+}
+
+/* Globales */
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem; /* 1rem = 10px*/
+    font-family: var(--fuenteParrafo);
+}
+
+h1, h2, h3, h4, h5{
+    font-family: var(--fuenteHeading);
+    text-align: center;
+    color: var(--blanco);
+    margin: 0;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.3rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+h5{
+    font-size: 2.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-family: var(--fuenteParrafo);
+    font-size: 1.8rem;
+}
+
+.contenedor{
+    width: min(105rem, 90%);
+    margin: 0 auto;
+}
+
+/* utilidades */
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+/* Header */
+
+/* Dado que modernazr agrega una clase que indica si el navegador del cliente soporta el formato webp o no,
+   con dicha informacion podemos establecer que tipo de imagen usar.
+*/
+
+.webp .header{
+    background-image: url('../img/banner.webp');
+}
+
+.no-webp .header{
+    background-image: url('../img/banner.jpg');
+}
+
+.header{
+    height: 60rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.contenedor-navegacion-principal{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+@media(min-width:768px){
+    .contenedor-navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo__texto{
+    font-weight: normal;
+}
+
+.logo__bold{
+    font-weight: bold;
+}
+
+.navegacion{
+    margin-top: 2rem;
+}
+
+@media(min-width:768px){
+    .navegacion{
+        display: flex;
+        column-gap: 3rem;
+        margin-top: 0;
+    }
+}
+
+.navegacion__enlace{
+    color: var(--blanco);
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    display: block;
+    text-align: center;
+}
+
+@media(min-width:768px){
+    .navegacion__enlace{
+        padding: 0;
+    }
+}
+
+.navegacion__enlace:hover{
+    color: var(--hover);
+}
+
+.header__texto{
+    color: var(--blanco);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.header__texto__descripcion{
+    margin-top: 1.5rem;
+    line-height: 2.8rem;
+}
+
+@media(min-width:768px){
+    .header__texto{
+        margin-top: 13rem;
+        line-height: 4.5rem;
+    }
+}
+
+/* Seccion principal (main) */
+
+@media(min-width:768px){
+    .display{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.blog__titulo,
+.sidebar__titulo{
+    color: var(--negro);
+    text-align: center;
+    margin: 3.2rem 0;
+}
+
+@media(min-width:768px){
+    .blog__titulo,
+    .sidebar__titulo{
+        text-align: left;
+    }
+}
+
+.seccion{
+    margin-bottom: .5rem;
+    border-bottom: 1px solid var(--separador);
+    margin-top: 2.5rem;
+}
+
+.seccion:first-of-type{
+    margin-top: 0;
+}
+
+.seccion:last-of-type{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.seccion__imagen{
+    width: 100%;
+}
+
+.seccion__entrada__titulo{
+    color: var(--negro);
+    text-align: left;
+}
+
+.seccion__entrada__descripcion{
+    line-height: 3rem;
+    margin: 2rem 0 3rem 0;
+    text-align:justify;
+}
+
+.boton{
+    display: block;
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 3.5rem;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+@media(min-width:768px){
+    .boton{
+        display: inline-block;
+        margin-bottom:2rem;
+    }
+}
+
+.boton--principal{
+    background-color: var(--negro);
+}
+
+.boton--secundario{
+    background-color: var(--primario);
+}
+
+/* SideBar */
+
+.sidebar__titulo,
+.curso__titulo{
+    color: var(--negro);
+}
+
+.curso{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--separador);
+}
+
+.curso:last-of-type{
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.lista-cursos{
+    list-style: none;
+}
+
+.curso__titulo{
+    text-align: left;
+}
+
+.precio-bold,
+.cupo-bold{
+    font-weight: bold;
+}
+
+/* Footer */
+
+.footer{
+    background-color: var(--negro);
+    margin-top: 5rem;
+}
+
+/****** Nosotros *******/
+
+.nosotros__titulo{
+    color: var(--negro);
+    margin: 3rem 0;
+}
+
+@media(min-width:768px){
+    .nosotros__contenido{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contenedor-img,
+    .nosotros__contenido__texto{
+        flex-basis: calc(50% - 1rem);
+    }
+
+    /* Esta es la forma de separar dos o más elementos en partes iguales usando flexbox.
+       Normalmente, esta forma solía ser usada o incluso suele ser dado que hay varios
+       navegadores de internet que no soportan la propiedad column-gap.
+    */
+}
+
+.nosotros__contenido__imagen,
+.curso__imagen{
+    width: 100%;
+}
+
+.nosotros__contenido__texto,
+.curso-descripcion__texto,
+.entrada__texto{
+    line-height: 2.8rem;
+    text-align: justify;
+}
+
+/******* Cursos ********/
+
+.cursos__titulo,
+.curso-descripcion__titulo,
+.entrada__titulo{
+    color: var(--negro);
+}
+
+.cursos__titulo{
+    margin-top: 4rem;
+}
+
+.taller{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--separador);
+}
+
+@media(min-width:768px){
+    .taller{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.taller:last-of-type{
+    border-bottom: none;
+}
+
+.curso-descripcion__titulo{
+    text-align: left;
+}
+
+.contenedor-img-curso{
+    flex-basis: calc(33.3% - 1rem);
+}
+
+.curso-descripcion{
+    flex-basis: calc(66.7% - 1rem);
+}
+
+.curso-descripcion__bold{
+    font-weight: bold;
+}
+
+/************ Entrada ***************/
+
+.entrada__imagen{
+    max-width: 100%;
+}
+
+.entrada__titulo{
+    padding: 3rem 0;
+}
+
+.entrada__texto{
+    text-align: justify;
+}
+
+/**************** Contacto ******************/
+
+.contacto-bg{
+    background-image: url('../img/nosotros.jpg');
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formulario{
+    width: 90%;
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+}
+
+.contenedor-campos{
+    padding: 2rem 1rem;
+    border: none;
+}
+
+.campo{
+    max-width: 100%;
+    display: flex;
+    padding: .5rem 0;
+    column-gap: 1.2rem;
+}
+
+.campo__label{
+    flex: 0 0 7rem;
+    text-align: center;
+}
+
+.campo__input{
+    width: 100%;
+    flex: 1;
+}
+
+.campo__input--textarea{
+    height: 10rem;
+}
+
+@media(min-width:768px){
+    .contenedor-campos{
+        padding: 3rem 2.5rem;
+    }
+
+    .campo{
+        padding: 1rem 0;
+    }
+
+    .campo__input--textarea{
+        height: 20rem;
+    }
+}
